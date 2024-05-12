@@ -1,34 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+
+
 
 const App = () => {
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    async function handleClick() {
-      const response = await fetch("http://localhost:1337/api/Cruds");
-      const json = await response.json();
-      setData(json);
-    }
-    handleClick();
-    console.log(setData);
-  }, []);
+    const fetchData =async () => {
+      try{
+        const response = await axios.get("http://localhost:1337/api/Cruds")
+        setData(response.data);
+      } catch (error){
+        console.error("error fetching data:", error);
+      }
+    } 
+fetchData();
+
+  }, [])
+
   return (
     <div>
-      <h1>User Information</h1>
-      {data.map((data) => (
-        <p key={data.id}>
-          Name: 
-          {data.id.}
-          Email:
-          {data.id.Email}
-        
-          Mobile Number:
-          {data.id.MobileNumber}
-
-          </p>
+      <h1>Strapi API</h1>
+      {data.map((index) =>(
+        <li key={index.id}>
+          {index.Email}
+        </li>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
