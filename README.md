@@ -25,7 +25,11 @@ npm run develop
 ## Bearer token
 Bearer tokens enable requests to authenticate using an access key.
 
+## Content type builder
+![Screenshot 2024-05-11 121651](https://github.com/VaibhavT48/CMS_Crud/assets/124554154/a56e2fa2-d5e1-469a-b867-27854a2410c7)
 
+## Content Manager
+![Screenshot 2024-05-11 133341](https://github.com/VaibhavT48/CMS_Crud/assets/124554154/69812d0d-20da-4a2e-96c4-b0ed26e93208)
 
-
-
+## Api response & token
+![Screenshot 2024-05-12 100804](https://github.com/VaibhavT48/CMS_Crud/assets/124554154/543ec995-6c79-48ac-9bf9-7d52efa5229d)
