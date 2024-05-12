@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cruds",
+  "info": {
+    "singularName": "crud",
+    "pluralName": "cruds",
+    "displayName": "Crud",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "DOB": {
+      "type": "date",
+      "required": false,
+      "unique": false,
+      "default": "1990-01-01"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "MobileNumber": {
+      "type": "integer",
+      "default": 9876543210
+    },
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "information": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::information.information",
+      "mappedBy": "cruds"
+    }
+  }
+}
